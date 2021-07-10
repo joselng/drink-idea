@@ -7,27 +7,27 @@ Projeto desenvolvido com React consumindo a API TheCocktailDB e API desenvolvida
 
 ### Passo a passo para utilização
 
-- 1. Clone o repositório
+-  **Clone o repositório**
 ```
 git clone https://github.com/joselng/drink-idea.git
 ```
 
-- 2. Acesse a pasta drink-idea
+-  **Acesse a pasta drink-idea**
 ```
 cd drink-idea
 ```
 
-- 3. Renomeie o arquivo .env.example para .env
+-  **Renomeie o arquivo .env.example para .env**
 ```
 cp .env.example .env
 ```
 
-- 4. Instale as dependências
+-  **Instale as dependências**
 ```
 npm install
 ```
 
-- 5. Inicie a aplicação
+-  **Inicie a aplicação**
 ```
 npm start
 ```
