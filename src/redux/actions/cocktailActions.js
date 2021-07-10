@@ -2,44 +2,44 @@ import { cocktailApi } from '../../services/api';
 
 import { ActionTypes } from '../constants/actionTypes';
 
-const fetchCockTailStart = () => ({
+const fetchCocktailStart = () => ({
   type: ActionTypes.FETCH_COCKTAIL_START,
 });
 
-const fetchCockTailSuccess = (cocktails) => ({
+const fetchCocktailSuccess = (cocktails) => ({
   type: ActionTypes.FETCH_COCKTAIL_SUCCESS,
   payload: cocktails,
 });
 
-const fetchCockTailFail = (error) => ({
+const fetchCocktailFail = (error) => ({
   type: ActionTypes.FETCH_COCKTAIL_FAIL,
   payload: error,
 });
 
-const fetchSearchCockTailStart = () => ({
+const fetchSearchCocktailStart = () => ({
   type: ActionTypes.SEARCH_COCKTAIL_START,
 });
 
-const fetchSearchCockTailSuccess = (cocktails) => ({
+const fetchSearchCocktailSuccess = (cocktails) => ({
   type: ActionTypes.SEARCH_COCKTAIL_SUCCESS,
   payload: cocktails,
 });
 
-const fetchSearchCockTailFail = (error) => ({
+const fetchSearchCocktailFail = (error) => ({
   type: ActionTypes.SEARCH_COCKTAIL_FAIL,
   payload: error,
 });
 
-const fetchFilterCockTailStart = () => ({
+const fetchFilterCocktailStart = () => ({
   type: ActionTypes.FILTER_COCKTAIL_START,
 });
 
-const fetchFilterCockTailSuccess = (cocktails) => ({
+const fetchFilterCocktailSuccess = (cocktails) => ({
   type: ActionTypes.FILTER_COCKTAIL_SUCCESS,
   payload: cocktails,
 });
 
-const fetchFilterCockTailFail = (error) => ({
+const fetchFilterCocktailFail = (error) => ({
   type: ActionTypes.FILTER_COCKTAIL_FAIL,
   payload: error,
 });
@@ -60,49 +60,49 @@ const fetchCocktailDetailsFail = (error) => ({
 
 export function fetchCocktailNonAlcoholic() {
   return function (dispatch) {
-    dispatch(fetchCockTailStart());
+    dispatch(fetchCocktailStart());
     cocktailApi
       .get('/filter.php?a=Non_Alcoholic')
       .then((response) => {
         const cocktails = response.data.drinks;
-        dispatch(fetchCockTailSuccess(cocktails));
+        dispatch(fetchCocktailSuccess(cocktails));
       })
       .catch((error) => {
-        dispatch(fetchCockTailFail(error));
+        dispatch(fetchCocktailFail(error));
       });
   };
 }
 
 export function fetchSearchCocktail(searchText) {
   return function (dispatch) {
-    dispatch(fetchSearchCockTailStart());
+    dispatch(fetchSearchCocktailStart());
     cocktailApi
       .get(
         `/search.php?s=${searchText}`,
       )
       .then((response) => {
         const cocktails = response.data.drinks;
-        dispatch(fetchSearchCockTailSuccess(cocktails));
+        dispatch(fetchSearchCocktailSuccess(cocktails));
       })
       .catch((error) => {
-        dispatch(fetchSearchCockTailFail(error));
+        dispatch(fetchSearchCocktailFail(error));
       });
   };
 }
 
 export function fetchFilterCocktail(category) {
   return function (dispatch) {
-    dispatch(fetchFilterCockTailStart());
+    dispatch(fetchFilterCocktailStart());
     cocktailApi
       .get(
         `/filter.php?c=${category}`,
       )
       .then((response) => {
         const cocktails = response.data.drinks;
-        dispatch(fetchFilterCockTailSuccess(cocktails));
+        dispatch(fetchFilterCocktailSuccess(cocktails));
       })
       .catch((error) => {
-        dispatch(fetchFilterCockTailFail(error));
+        dispatch(fetchFilterCocktailFail(error));
       });
   };
 }

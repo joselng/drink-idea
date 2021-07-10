@@ -1,12 +1,44 @@
+import { toast } from 'react-toastify';
+
 import { ActionTypes } from '../constants/actionTypes';
 
-export const userSignUp = (name, email, password, birthday) => ({
-  type: ActionTypes.USER_SIGN_UP,
+import { backendApi } from '../../services/api';
+
+export const userRegisterStart = (name, email, password) => ({
+  type: ActionTypes.USER_REGISTER_START,
   payload: {
-    name, email, password, birthday,
+    name, email, password,
   },
 });
 
-export const userSignFail = () => ({
-  type: ActionTypes.USER_SIGN_UP_FAIL,
+export const userRegisterSuccess = (id, name, email) => ({
+  type: ActionTypes.USER_REGISTER_SUCCESS,
+  payload: {
+    id, name, email,
+  },
 });
+
+export const userRegisterFail = () => ({
+  type: ActionTypes.USER_REGISTER_FAIL,
+});
+
+export function userRegister(name, email, password) {
+  return async function (dispatch) {
+    dispatch(userRegisterStart());
+
+    return backendApi
+      .post('/users', {
+        name, email, password,
+      })
+      .then((response) => {
+        const user = response.data;
+
+        dispatch(userRegisterSuccess(user));
+        toast.success('Conta criada com sucesso!');
+      })
+      .catch((error) => {
+        toast.error(error.response.data.message);
+        dispatch(userRegisterFail(error));
+      });
+  };
+}

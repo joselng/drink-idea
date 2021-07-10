@@ -35,10 +35,16 @@ const Categories = (props) => {
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border text-danger" role="status">
+      <div className="d-flex justify-content-center mt-2 mb-5">
+        <div className="spinner-border text-danger mt-5 mb-3" role="status">
           <span className="visually-hidden">Carregando...</span>
         </div>
+&nbsp;&nbsp;&nbsp;
+        <h3 className="mt-5 mb-5">
+          Buscando
+          {' '}
+          {title}
+        </h3>
       </div>
     );
   }
@@ -64,10 +70,10 @@ const Categories = (props) => {
                   <h4 className="card-title">{glass}</h4>
                   <p className="card-text">{info}</p>
                   <div className="row">
-                    <div className="col-lg-9">
+                    <div className="col-lg-9 col-xs-9 col-sm-9">
                       <Link to={`/cocktail/${id}`} style={{ color: '#333' }} className="btn form-control btn-outline-warning">Detalhes</Link>
                     </div>
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 col-xs-3 col-sm-3">
                       <button type="button" className="btn form-control btn-outline-danger">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
                           <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />

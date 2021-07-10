@@ -46,12 +46,8 @@ const Home = () => {
       </div>
 
       <div className="container cocktails">
-        <div className="row">
-          <h2>As mais populares</h2>
-        </div>
-
         <div className="row cocktails-itens">
-          <CocktailList />
+          <CocktailList serchText="As mais populares" />
         </div>
       </div>
     </main>

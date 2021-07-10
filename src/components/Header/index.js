@@ -34,8 +34,14 @@ const Header = () => (
             </li>
           </ul>
           <span className="navbar-text">
-            <Link to="/" className="btn btn-sm">Cadastre-se</Link>
-            <Link to="/" className="btn btn-sm btn-custom">Entrar</Link>
+            <div className="row">
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <Link to="/register" className="btn btn-sm form-control">Cadastre-se</Link>
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <Link to="/login" className="btn btn-sm btn-custom form-control">Entrar</Link>
+              </div>
+            </div>
           </span>
         </div>
       </div>

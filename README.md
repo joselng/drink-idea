@@ -3,7 +3,7 @@
 Projeto desenvolvido com React consumindo a API TheCocktailDB e API desenvolvida em Node.js para cadastrar usuários e permitir o cadastro de favoritos.
 
 #### Screenshot do projeto
-<img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot.png">
+<img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_1.png">
 
 ### Passo a passo para utilização
 
@@ -35,3 +35,9 @@ npm start
 ### *** Para utilizar todas as funcionalidades do sistema clone o repositório do servidor Node.js (ainda em desenvolvimento)
 
 https://github.com/joselng/drink-idea-api
+
+
+#### Mais screenshots do aplicativo
+<img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_2.png">
+
+<img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_3.png">
