@@ -6,7 +6,7 @@ Projeto desenvolvido com React consumindo a API TheCocktailDB e API desenvolvida
 <img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_1.png">
 
 ### Teste Online - (Somente funcionalidades da API TheCocktailDB funcionando nessa versão)
-```
+
 https://drinkidea.netlify.app/
 
 
