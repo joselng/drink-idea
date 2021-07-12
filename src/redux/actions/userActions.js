@@ -11,11 +11,9 @@ export const userRegisterStart = (name, email, password) => ({
   },
 });
 
-export const userRegisterSuccess = (id, name, email) => ({
+export const userRegisterSuccess = (user) => ({
   type: ActionTypes.USER_REGISTER_SUCCESS,
-  payload: {
-    id, name, email,
-  },
+  payload: user,
 });
 
 export const userRegisterFail = () => ({

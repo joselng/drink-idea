@@ -2,6 +2,8 @@ import { ActionTypes } from '../constants/actionTypes';
 
 const initialState = {
   token: null,
+  user: null,
+  favorites: null,
   signed: false,
   loading: false,
   error: null,
@@ -20,7 +22,9 @@ export const authReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: false,
         signed: true,
-        token: payload,
+        token: payload.token,
+        user: payload.user,
+        favorites: payload.favorites,
       };
     }
     case ActionTypes.SIGN_IN_FAILURE: {

@@ -58,11 +58,11 @@ const fetchCocktailDetailsFail = (error) => ({
   payload: error,
 });
 
-export function fetchCocktailNonAlcoholic() {
+export function fecthCocktail() {
   return function (dispatch) {
     dispatch(fetchCocktailStart());
     cocktailApi
-      .get('/filter.php?a=Non_Alcoholic')
+      .get('/filter.php?c=Cocktail')
       .then((response) => {
         const cocktails = response.data.drinks;
         dispatch(fetchCocktailSuccess(cocktails));

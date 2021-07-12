@@ -10,6 +10,7 @@ import CocktailDetails from './pages/CocktailDetails';
 import Categories from './pages/Categories';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import Favorites from './pages/Favorites';
 
 import './styles/app.css';
 import 'react-toastify/dist/ReactToastify.css';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" exact component={Home} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
+        <Route path="/favorites" component={Favorites} />
         <Route path="/cocktail/:id" component={CocktailDetails} />
         <Route path="/cocktails" component={() => <Categories name="Cocktail" title="Coquetéis" />} />
         <Route path="/milkshakes" component={() => <Categories name="Milk / Float / Shake" title="Milkshakes" />} />

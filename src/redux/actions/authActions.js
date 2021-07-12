@@ -4,14 +4,14 @@ import { ActionTypes } from '../constants/actionTypes';
 
 import { backendApi } from '../../services/api';
 
-export const SignInStart = (email, password) => ({
+export const signInStart = (email, password) => ({
   type: ActionTypes.SIGN_IN_START,
   payload: { email, password },
 });
 
-export const SignInSuccess = (token, user) => ({
+export const signInSuccess = (user, token, favorites) => ({
   type: ActionTypes.SIGN_IN_SUCCESS,
-  payload: { token, user },
+  payload: { user, token, favorites },
 });
 
 export const signInFail = () => ({
@@ -20,16 +20,17 @@ export const signInFail = () => ({
 
 export function signIn(email, password) {
   return async function (dispatch) {
-    dispatch(SignInStart());
+    dispatch(signInStart());
 
     return backendApi
       .post('/sessions', {
         email, password,
       })
       .then((response) => {
-        const { user, token } = response.data;
+        const { user, token, favorites } = response.data;
 
-        dispatch(SignInSuccess(user, token));
+        dispatch(signInSuccess(user, token, favorites));
+        backendApi.defaults.headers.Authorization = `Bearer ${token}`;
 
         toast.success(`Bem vindo(a) ${user.name}`);
       })

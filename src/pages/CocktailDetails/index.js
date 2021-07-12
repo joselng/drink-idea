@@ -29,6 +29,16 @@ const CocktailDetails = () => {
         strIngredient3,
         strIngredient4,
         strIngredient5,
+        strIngredient6,
+        strIngredient7,
+        strIngredient8,
+        strIngredient9,
+        strIngredient10,
+        strIngredient11,
+        strIngredient12,
+        strIngredient13,
+        strIngredient14,
+        strIngredient15,
       } = cocktail[0];
       const ingredients = [
         strIngredient1,
@@ -36,6 +46,16 @@ const CocktailDetails = () => {
         strIngredient3,
         strIngredient4,
         strIngredient5,
+        strIngredient6,
+        strIngredient7,
+        strIngredient8,
+        strIngredient9,
+        strIngredient10,
+        strIngredient11,
+        strIngredient12,
+        strIngredient13,
+        strIngredient14,
+        strIngredient15,
       ];
       const newCocktail = {
         name,

@@ -1,15 +1,20 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { signIn } from '../../redux/actions/authActions';
 
 const Login = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  const { profile } = useSelector((state) => ({ ...state.user }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const [email, password] = e.target;
 
     dispatch(signIn(email.value, password.value));
+
+    history.push('/');
   };
 
   return (
@@ -20,7 +25,7 @@ const Login = () => {
         <div className="row col-lg-6 col-xs-12 col-sm-9">
           <label htmlFor="email" className="mb-3">
             Email
-            <input id="email" required name="email" type="email" className="form-control mt-1" placeholder="Informe seu email" />
+            <input id="email" value={profile && profile.email} required name="email" type="email" className="form-control mt-1" placeholder="Informe seu email" />
           </label>
           <label htmlFor="password" className="mb-3">
             Senha

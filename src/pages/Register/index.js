@@ -1,8 +1,10 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { userRegister } from '../../redux/actions/userActions';
 
 const Register = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -10,6 +12,7 @@ const Register = () => {
     const [name, email, password] = e.target;
 
     dispatch(userRegister(name.value, email.value, password.value));
+    history.push('/login');
   };
 
   return (

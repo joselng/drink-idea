@@ -32,7 +32,7 @@ npm install
 npm start
 ```
 
-### *** Para utilizar todas as funcionalidades do sistema clone o repositório do servidor Node.js (ainda em desenvolvimento)
+### *** Para utilizar todas as funcionalidades do sistema clone o repositório do servidor Node.js
 
 https://github.com/joselng/drink-idea-api
 
@@ -41,3 +41,5 @@ https://github.com/joselng/drink-idea-api
 <img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_2.png">
 
 <img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_3.png">
+
+<img alt="screenshot" src="https://github.com/joselng/drink-idea/blob/main/src/assets/screenshot_4.png">
